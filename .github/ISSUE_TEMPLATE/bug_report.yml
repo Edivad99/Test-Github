@@ -1,6 +1,6 @@
 name: Bug report
 description: Create a report where you describe the type of bug
-title: "<title>"
+title: ""
 
 - type: checkboxes
   attributes:
