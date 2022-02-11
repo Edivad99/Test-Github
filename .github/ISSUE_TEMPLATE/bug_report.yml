@@ -1,27 +1,57 @@
 name: Bug report
-description: Create a report where you describe the type of bug
-title: ""
-
-- type: checkboxes
-  attributes:
-    label: Is there an existing issue for this?
-    description: Please search to see if an issue already exists for the bug you encountered.
-    options:
-    - label: I have searched the existing issues
-      required: true
-
-- type: textarea
-  attributes:
-    label: Environment
-    description: |
-      examples:
-        - **Mod version**: 1.0.0
-        - **Forge version**: 1.18.1 - 39.0.75
-        - **Minecraft version**: 1.18.1
-    value: |
-        - Mod version:
-        - Forge bersion:
-        - Minecraft version:
-    render: markdown
-  validations:
-    required: true
+description: Found a bug or encountered a crash? Please report it here.
+labels: [ bug ]
+body:
+  - type: markdown
+    attributes:
+        value: |
+            Provide a summary of the issue in the title above.
+  - type: textarea
+    id: description
+    attributes:
+        label: Describe the bug
+        description: |
+            Be as detailed as possible.
+            If applicable, also tell us what you expected to happen instead.
+    validations:
+        required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+        label: How can we reproduce this bug or crash?
+        description: |
+            Provide us with steps on how to reproduce this issue.
+            Try to reproduce the issue with only Refined Storage installed, if possible.
+        placeholder: |
+            1.
+            2.
+            3.
+    validations:
+        required: true
+  - type: dropdown
+    id: minecraft
+    attributes:
+        label: What Minecraft version is this happening on?
+        options:
+            - Minecraft 1.18.1
+            - Minecraft 1.16.5
+  - type: input
+    id: forge
+    attributes:
+        label: What Forge version is this happening on?
+    validations:
+        required: true
+  - type: input
+    id: rs
+    attributes:
+        label: What Refined Storage version is this happening on?
+        description: |
+            Ensure that you are running on the latest Refined Storage version.
+    validations:
+        required: true
+  - type: textarea
+    id: logs
+    attributes:
+        label: Relevant log output
+        description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+        render: shell
