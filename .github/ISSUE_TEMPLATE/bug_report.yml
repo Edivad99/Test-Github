@@ -1,6 +1,13 @@
 name: Bug report
 description: Found a bug or encountered a crash? Please report it here.
+
 body:
+
+  - type: markdown
+    attributes:
+        value: |
+            Provide a summary of the issue in the title above.
+
   - type: checkboxes
     attributes:
       label: Is there an existing issue for this?
@@ -9,10 +16,6 @@ body:
       - label: I have searched the existing issues
         required: true
 
-  - type: markdown
-    attributes:
-        value: |
-            Provide a summary of the issue in the title above.
   - type: textarea
     id: description
     attributes:
@@ -22,6 +25,7 @@ body:
             If applicable, also tell me what you expected to happen instead.
     validations:
         required: true
+
   - type: textarea
     id: reproduce
     attributes:
@@ -35,11 +39,12 @@ body:
             3.
     validations:
         required: true
+
   - type: textarea
     attributes:
       label: Configuration
       description: |
-        examples:
+        Example:
           - **Mod version**: 1.0.0
           - **Forge version**: 1.18.1 - 39.0.0
           - **Minecraft version**: 1.18.1
