@@ -19,9 +19,9 @@ title: "<title>"
         - **Forge version**: 1.18.1 - 39.0.75
         - **Minecraft version**: 1.18.1
     value: |
-        - OS:
-        - Node:
-        - npm:
+        - Mod version:
+        - Forge bersion:
+        - Minecraft version:
     render: markdown
   validations:
     required: true
